@@ -1,0 +1,166 @@
+.anime-row-container {
+  margin-bottom: 2.5rem;
+}
+
+.row-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-history {
+  font-size: 1.2rem;
+}
+
+.anime-row {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  /* Hide scrollbar for cleaner look */
+  scrollbar-width: none; 
+}
+
+.anime-row::-webkit-scrollbar {
+  display: none;
+}
+
+.anime-card {
+  width: 200px;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+}
+
+.character-card {
+  flex-direction: row;
+  width: 260px;
+  background-color: var(--bg-elevated);
+  padding: 0.8rem;
+  border-radius: var(--radius-md);
+  align-items: center;
+}
+
+.character-card:hover {
+  transform: none;
+  background-color: #333338;
+}
+
+.img-container {
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.character-card .img-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.anime-card:hover:not(.character-card) .img-container img {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.anime-card:hover:not(.character-card) .card-overlay {
+  opacity: 1;
+}
+
+.play-icon {
+  font-size: 3rem;
+  color: var(--accent-gold);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.character-card .card-info {
+  justify-content: center;
+}
+
+.card-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tag-small {
+  background-color: var(--text-main);
+  color: var(--bg-dark);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.tag-ep {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.char-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.va-name {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.anime-card-skeleton {
+  width: 200px;
+  height: 280px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-elevated) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
